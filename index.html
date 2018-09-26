@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nasa's picture of the day</title>
+
+<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="main">
+    <div id="date-wrapper">
+      <label for="datepicker">Choose your date:</label>
+      <input id="datepicker" type="date" onchange="checkDisabled()" />
+      <input type="button" class="button raised green disabled" id="date-submit" value="Change picture of the day" onclick="checkDate();" />
+    </div>
+
+    <h1>Nasa's picture of the day for <span id="header-date"></span></h1>
+
+    <img id='nasa-image'> </img>
+  </div>
+
+  <script src="apod.js"></script>
+</body>
+
+</html>
