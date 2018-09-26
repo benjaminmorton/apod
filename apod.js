@@ -7,10 +7,14 @@ let url = 'https://api.nasa.gov/planetary/apod?api_key=' + key + '&date=' + date
 const domImage = document.getElementById('nasa-image');
 const domDate = document.getElementById('header-date');
 const domDateButton  = document.getElementById("date-submit")
+
+// run getImage function on page load
 getImage();
 
+//disable datepicker button until a date has been entered
 domDateButton.disabled = true;
 
+// function to remove disabled style and state from button
 function checkDisabled() {
   if (domDateButton && domDateButton.value) {
     domDateButton.disabled = false;
@@ -18,6 +22,7 @@ function checkDisabled() {
   }
 }
 
+// main function to retrieve the apod
 function getImage() {
   fetch(url)
   // When a response is received check it
@@ -40,9 +45,8 @@ function getImage() {
   })
   .catch(err => console.log(err.message));
 }
-// request the image data
 
-
+// function to change the date via the datepicker and update the image
 function checkDate() {
   //use the simple datepicker to update the image
   let selectedText = document.getElementById('datepicker').value;
